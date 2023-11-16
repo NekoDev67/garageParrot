@@ -1,0 +1,66 @@
+body 
+{
+    margin: 0;
+    padding: 0;
+    background-color: whitesmoke;
+}
+
+*
+{
+    box-sizing: border-box;
+}
+header {
+    margin-bottom: 5vh;
+}
+#garage
+{
+    margin: 0;
+    padding: 0;
+    padding-top: 5vh;
+    height: 45vh;
+    background-image: url("../../public/images/garage.jpg");
+    background-size: cover;
+    background-position: center 65%;
+    color: #000;
+    text-shadow: 1px 1px 1px white, -1px -1px 1px white, 1px -1px 1px white, -1px 1px 1px white;
+}
+
+.navSize 
+{
+    height: 5vh;
+    position: fixed;
+}
+
+.padTop5
+{
+    padding-top: 5vh;
+}
+.borderOccasion 
+{ 
+    height: 40vh;
+    width: 40vh;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.footerContainer 
+{
+    height: 45vh;
+}
+
+.boxSize 
+{
+    height: 100px;
+}
+
+.fsmall 
+{
+    font-size: 0.8em;
+}
+
+.designCenter
+{
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+}
