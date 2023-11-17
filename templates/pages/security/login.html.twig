@@ -1,0 +1,29 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GarageParrot - Connexion{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <h1 class='mt-4'>Connexion:</h1>
+        <a href="{{ path('home.index') }}" class="d-block mx-auto text-decoration-none text-primary fw-bold">RETOUR</a>
+        {% if error %}
+            <div class="alert alert-danger"> {{ error.messageKey|trans(error.messageData, 'security') }} </div>
+        {% endif %}
+        <form action="{{ path('security.login') }}" method="post">
+
+            <div class="form-group">
+                <label for="email"  class="form-label mt-4">adresse email:</label>
+                <input type="email" class="form-control" id="username" name="_username" placeholder ="exemple@parrot.gr" value="{{ last_username }}"/>
+            </div>
+
+            <div class="form-group">
+                <label for="password" class="form-label mt-4">mot de passe</label>
+                <input type="password" class="form-control" id="password" name="_password" placeholder ="********" />
+            </div>
+            <button type="submit" class="btn btn-primary mt-4">
+                Se connecter
+            </button>
+        </form>
+
+    </div>
+{% endblock %}
