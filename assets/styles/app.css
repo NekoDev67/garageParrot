@@ -75,3 +75,9 @@ header {
     display: flex;
     justify-content: center;
 }
+
+.custom-card {
+    width: 300px;
+    height: 400px;
+    margin-bottom: 15px; 
+}
