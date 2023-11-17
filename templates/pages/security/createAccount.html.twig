@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}GarageParrot - création de compte{% endblock %}
+
+{% block body %}
+    <div class='container'>
+        <h1 class='mt-4'>Création de compte:</h1>
+        <a href="{{ path('home.index') }}" class="d-block mx-auto text-decoration-none text-primary fw-bold">RETOUR</a>
+
+        {{ form(form) }}
+
+    </div>
+{% endblock %}

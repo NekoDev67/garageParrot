@@ -19,20 +19,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
     #[ORM\Id]
     #[ORM\GeneratedValue]
     #[ORM\Column]
-    #[Assert\NotNull()]
-    #[Assert\NotBlank()]
     private ?int $id = null;
 
     #[ORM\Column(length: 180, unique: true)]
     #[Assert\Length(min: 2, max: 180)]
-    #[Assert\NotNull()]
-    #[Assert\NotBlank()]
     #[Assert\Email()]
     private ?string $email = null;
 
     #[ORM\Column]
-    #[Assert\NotNull()]
-    #[Assert\NotBlank()]
     private array $roles = [];
 
     /**
