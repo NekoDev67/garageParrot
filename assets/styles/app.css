@@ -3,12 +3,23 @@ body
     margin: 0;
     padding: 0;
     background-color: whitesmoke;
+    padding-top: 5vh;
 }
 
 *
 {
     box-sizing: border-box;
 }
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Valeur arbitraire pour le z-index, ajustez si nécessaire */
+}
+
+
 header {
     margin-bottom: 5vh;
 }

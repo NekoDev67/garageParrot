@@ -1,0 +1,32 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Car{% endblock %}
+
+{% block body %}
+
+<div class="padTop5 container">
+    <h1 class='text-center mb-5'>Les voitures d'occasions</h1>
+<div class="container">
+    <div class="row">
+        {% for car in cars %}
+            <div class="col-md-4 mb-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Description</h5>
+                        <p class="card-text">{{ car.description }}</p>
+                        <h5 class="card-title">Date de mise en circulation</h5>
+                        <p class="card-text">{{ car.yearOfManufacture|date('d:m:Y') }}</p>
+                        <h5 class="card-title">Kilométrage</h5>
+                        <p class="card-text">{{ car.mileage }} km</p>
+                        <h5 class="card-title">Prix</h5>
+                        <p class="card-text">{{ car.price }} €</p>
+                    </div>
+                </div>
+            </div>
+            {% if loop.index % 3 == 0 %}
+                </div><div class="row">
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
