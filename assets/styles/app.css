@@ -77,8 +77,11 @@ header {
 }
 
 .custom-card {
-    width: 300px;
+    width: 100%;
+    min-width: 210px;
     height: 400px;
+    font-size: 0.8em;
+    overflow-y: auto;
     margin-bottom: 15px; 
 }
 
@@ -88,3 +91,4 @@ header {
     transform: translateX(-50%);
 
 }
+

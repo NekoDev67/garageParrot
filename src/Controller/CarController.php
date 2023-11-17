@@ -15,7 +15,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 class CarController extends AbstractController
 {
     /**
-     * This function display all cars
+     * This Controller display all cars
      *
      * @param CarRepository $respository
      * @param PaginatorInterface $paginator
@@ -60,5 +60,28 @@ class CarController extends AbstractController
         return $this->render('pages/car/new.html.twig', [
             'form' => $form->createView()
         ]);
+    }
+
+    #[Route('/car/delete/{id}', 'car.delete', methods:['GET'])]
+    public function delete(EntityManagerInterface $manager, Car $car) : Response
+    {
+        if (!$car) 
+        {
+            $this->addFlash(
+                'success',
+                "Votre voiture n'a pas été trouvé.",
+            );
+            return $this->redirectToRoute('car');
+        }
+
+        $manager->remove($car);
+        $manager->flush();
+
+        $this->addFlash(
+            'success',
+            'Votre voiture a bien été supprimé !',
+        );
+
+        return $this->redirectToRoute('car');
     }
 }
