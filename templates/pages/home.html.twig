@@ -6,6 +6,13 @@
 {% block body %}
     <div class="d-flex flex-column align-items-center">
         <h1 class="padTop5">Welcome!</h1>
+
+{% for flashMessage in app.flashes('success') %}
+    <div class="alert alert-success">
+        {{ flashMessage }}
+    </div>
+{% endfor %}
+
         <a href = "#">Inscription</a>    
     </div>
 {% endblock %}

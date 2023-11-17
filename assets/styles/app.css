@@ -81,3 +81,10 @@ header {
     height: 400px;
     margin-bottom: 15px; 
 }
+
+.custom-btn-width {
+    width: 35%; /* ou toute autre valeur de largeur souhaitée */
+    margin-left: 50%;
+    transform: translateX(-50%);
+
+}

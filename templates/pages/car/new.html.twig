@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Proposez votre occasion
+{% endblock %}
+
+{% block body %}
+<div class="container d-flex justify-content-center mt-5">
+    <div class="col-md-6">
+        <div class="d-flex flex-column">
+
+            <h1 class="mb-4 text-center">Mise en vente :</h1>
+            <div>
+                {{ form_start(form) }}
+
+                <div class="form-group">
+                    {{ form_label(form.description) }}
+                    {{ form_widget(form.description) }}
+                    {{ form_errors(form.description)}}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.price) }}
+                    {{ form_widget(form.price) }}
+                    {{ form_errors(form.price)}}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.yearOfManufacture) }}
+                    {{ form_widget(form.yearOfManufacture) }}
+                    {{ form_errors(form.yearOfManufacture)}}
+                </div>
+
+                <div class="form-group">
+                    {{ form_label(form.mileage) }}
+                    {{ form_widget(form.mileage) }}
+                    {{ form_errors(form.mileage)}}
+                </div>
+
+                <div class="form-group">
+                    {{ form_row(form.submit) }}
+                </div>                
+
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

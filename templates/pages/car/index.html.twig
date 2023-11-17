@@ -5,11 +5,12 @@
 {% block body %}
 
 <div class="padTop5 container">
+    {% if not cars.items is same as ([]) %}
     <h1 class='text-center mb-5'>Les voitures d'occasions</h1>
     <div class="container">
         <div class="row">
             {% for car in cars %}
-                <div class="col-md-4 mb-4">
+                <div class="col-md-4 mb-4 d-flex align-items-center justify-content-center">
                     <div class="card custom-card">
                         <div class="card-body">
                             <h5 class="card-title">Description</h5>
@@ -30,5 +31,8 @@
             <small class ='count d-flex flex-columns justify-content-center align-items-center'> il y a {{ cars.getTotalItemCount }} voitures en occasions trouvées.</small>
         </div>
     </div>
+    {% else %}
+        <small>Aucunes voitures en stock</small>
+    {% endif %}
 </div>
 {% endblock %}
